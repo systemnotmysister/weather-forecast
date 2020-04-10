@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format":"npx prettier@2.0.4 . --write"
+    "format": "npx prettier@2.0.4 . --write"
   },
   "eslintConfig": {
     "extends": "react-app"
