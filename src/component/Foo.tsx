@@ -1,18 +1,23 @@
 import React from "react";
 import { Row, Col} from 'antd';
+import 'antd/dist/antd.css';
 
 function Foo(props:any) {
   console.log(props.cityListItem);
-  
   return (
     <div>
     {props.cityListItem.map((it:any) => {
      return( <Row>
-         <Col span={12}> {it.name} </Col>
-         <Col span={12}> {it.name} </Col>
+        <Col span={2}> {it.name} </Col>
+         <Col span={2}> <img height = "20" src =  
+         {it.sunshine === 50 ? "https://image.flaticon.com/icons/svg/861/861059.svg":
+           it.sunshine > 50 ? "https://image.flaticon.com/icons/svg/979/979585.svg" :
+             it.sunshine < 50 ? "https://image.flaticon.com/icons/svg/148/148828.svg": "https://image.flaticon.com/icons/svg/178/178338.svg" }/>
+             </Col> 
+             <Col span={2}>{it.temp} </Col>
       </Row> );
      })}
- </div> 
+    </div> 
   );
 }
 export default Foo;
