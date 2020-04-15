@@ -1,5 +1,5 @@
 import React from "react";
-import { cityListItem } from "./CityListItem";
+import { cityListItem } from "./cityListItem";
 
 
 const RenderComp = () => {
