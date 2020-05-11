@@ -1,17 +1,51 @@
-import React from 'react';
-import CityId from './CityId';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-const apiKey = '3daadc7f2219446fa983a882fe6f52ce'
-const url = `https://api.openweathermap.org/data/2.5/weather?q=703448&appid=${apiKey}`
+export const apiKey = 'cb4a1782dbd75c2ffdde3b033b2752ee'
 
- async function getCityByid() {
-    console.log('fetching started...')
-    try {
-        const response = await fetch(url)
-        const cities = await response.json()
-        console.log('cities:', cities)
+
+    class GetData extends Component {
+     constructor(props: Readonly<{}>) {
+         super(props);
+       this.state = {
+     loading: false
+  }
+
+}
+ async componentDidMount() {
+   console.log('fetching started...')
+  this.setState({loading: true})
+        try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${this.props.id}&appid=${apiKey}`)
+        const data = await response.json()
+        this.state = ({ data: data });
     } catch (e) {
-        console.error(e)
+        console.error(e) 
     }
- }
- getCityByid()
+}
+  
+    render() {
+      if (this.state.loading || !this.state.data)
+      { 
+        return 'loading...'
+      }
+      else {
+      return (
+        <div>
+          <ul>
+              <li>
+                {this.state.data.name}
+                {this.state.data.visibility}
+                {this.state.data.temp}
+             </li>
+            }
+          </ul>
+       </div>
+      )}
+    }
+  }
+
+export default GetData;
+ 
+
+

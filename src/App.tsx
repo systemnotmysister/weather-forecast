@@ -1,26 +1,23 @@
 import React from "react";
-import { cityListItem } from "./component/cityListItem";
-import Foo from './component/Foo'
-import { BrowserRouter as Router, Route, Link , Switch} from "react-router-dom";
-import imgReact from "./component/imgReact";
+import { BrowserRouter as Router, Route, Link , Switch, Redirect} from "react-router-dom";
+import AppRouter from "./component/AppRouter";
+import CityItem from "./component/CityItem"; 
+import CityId from './component/CityId';
+import componentDidMount from './component/Async';
+import GetData from "./component/Async";
 
 
-function App() {
-  return (
-    <div className="App">
-       <header className="App-header"></header>
-         <Foo cityListItem={cityListItem}/>
-    <div>
-       <Router>  
-           <Link to="/react-route">я учу реакт роут</Link>
-             <Switch>         
-                <Route path="/react-route"> 
-                {imgReact}
-                </Route>
-             </Switch>
-       </Router>
-   </div>  
-    </div>
-  );
-}
-export default App;
+  function App() {
+    return (
+      <div className="App">
+     
+        { CityId.map ((it:any) =>  <GetData   props = {it.id} /> ) } 
+     
+
+       <AppRouter/>
+       <CityItem/>
+       
+      </div>
+    );
+  }
+  export default App;
