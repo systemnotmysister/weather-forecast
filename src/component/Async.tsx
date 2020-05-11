@@ -4,8 +4,8 @@ import { render } from 'react-dom';
 export const apiKey = 'cb4a1782dbd75c2ffdde3b033b2752ee'
 
 
-    class GetData extends Component {
-     constructor(props: Readonly<{}>) {
+    class GetData extends Component<{id:number}> {
+     constructor(props:any) {
          super(props);
        this.state = {
      loading: false
