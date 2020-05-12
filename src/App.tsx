@@ -15,7 +15,6 @@ import GetData from "./component/Async";
      
 
        <AppRouter/>
-       <CityItem/>
        
       </div>
     );
