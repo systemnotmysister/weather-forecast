@@ -18,7 +18,7 @@ const AppRouter = () => {
 
         <Route  path ="/:id">
           <CityItem/>
-<GetData/>          
+       
         </Route>
 
    </Switch>
