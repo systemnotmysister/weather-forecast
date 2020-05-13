@@ -14,7 +14,11 @@ import GetData from "./component/Async";
     return (
       <div className="App">
      
+<<<<<<< HEAD
         { CityId.map ((it) =>  <GetData  props = {it.id}/> ) } 
+=======
+        { CityId.map ((it:any) =>  <GetData   id = {it.id} /> ) } 
+>>>>>>> b8577781e3216e5e8fb3604b89faf68ea8f0e140
      
 
        <AppRouter/>
