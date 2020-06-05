@@ -3,7 +3,7 @@ import { BrowserRouter as  Switch, Route,  } from "react-router-dom";
 import Foo from "./Foo";
 import CityId from './CityId';
 import SecondRequest from './SecondRequest';
-
+import ListOfReq from '../ListOfReq';
 const AppRouter = () => {
     return (
       <Switch>
@@ -11,7 +11,7 @@ const AppRouter = () => {
 <Route path= "/exectcityweather" component = {SecondRequest}/>
 
        <Route exact path ="/">
-          <Foo CityId = {CityId}/>
+       <ListOfReq/>
         </Route>
 
 
