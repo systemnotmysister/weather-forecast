@@ -1,29 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link , Switch, Redirect} from "react-router-dom";
-import AppRouter from "./component/AppRouter";
 import CityId from './component/CityId';
-import componentDidMount from './component/Async';
-import GetData from "./component/Async";
-
+import GetData from "./component/FirstRequest";
+import { Route, Router } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import SecondRequest from './component/SecondRequest';
+import AppRouter from './component/AppRouter';
 
 
 
 
   function App() {
    
-    return (
-      <div className="App">
-     
-<<<<<<< HEAD
-        { CityId.map ((it) =>  <GetData  props = {it.id}/> ) } 
-=======
-        { CityId.map ((it:any) =>  <GetData   id = {it.id} /> ) } 
->>>>>>> b8577781e3216e5e8fb3604b89faf68ea8f0e140
-     
 
-       <AppRouter/>
+
+    return (
+
+      <AppRouter>
+      <div className="App">
+
+        { CityId.map ((it) =>  <GetData id  = {it.id}/> ) } 
        
       </div>
+      </AppRouter>
     );
-  }
+
+
+        
+    }
   export default App;

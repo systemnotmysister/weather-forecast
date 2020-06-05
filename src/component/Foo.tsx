@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from 'antd';
 import 'antd/dist/antd.css'
-import CityId from './CityId';
 
 function Foo ( props:any ) {
   return (
