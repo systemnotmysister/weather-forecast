@@ -5,7 +5,7 @@ import { Link, Route, Router } from "react-router-dom";
 
 export const apiKey = "6f699dde7f55efea24cc34b40d167d91";
 
-class GetData extends Component<{ id: number },{loading:boolean,data:any}> {
+class  GetData extends Component<{ id: number },{loading:boolean,data:any}> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
@@ -37,15 +37,24 @@ class GetData extends Component<{ id: number },{loading:boolean,data:any}> {
 				<div>
 					<ul>
 					     <Row>
-							 
+
 				           <Col span={2}>
-							   <li>   <Link to='/exactcityweather'> {this.state.data.name} </Link>  </li>
+							   <li>
+								   	<Link 
+										to='/exactcityweather'
+										onClick={() => {
+											this.props.passdata(this.props.id);
+										}}
+									>
+										{this.state.data.name}
+									</Link>
+								</li>
 						   </Col>	
 
 						     <Col span={2}> temperature: {Math.round(this.state.data.main.temp-273)} </Col>	
 
 						     <Col span={2}> humidity: {this.state.data.main.humidity} </Col>
-
+qw.
 				    	</Row>	
 					</ul>
 				</div>

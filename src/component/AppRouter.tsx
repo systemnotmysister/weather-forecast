@@ -1,21 +1,34 @@
-import React from "react";
-import { BrowserRouter as  Switch, Route,  } from "react-router-dom";
-import Foo from "./Foo";
-import CityId from './CityId';
+import React, { Component } from "react";
+import { BrowserRouter as  Switch, Route, Router,  } from "react-router-dom";
 import SecondRequest from './SecondRequest';
 import ListOfReq from '../ListOfReq';
-const AppRouter = () => {
+import { ReactComponent } from "*.svg";
+
+
+class  AppRouter extends Component {
+  constructor(props: any) {
+		super(props);
+		this.state = {
+      data: Number
+		};
+  }
+  render () {
     return (
       <Switch>
-
-<Route path= "/exectcityweather" component = {SecondRequest}/>
-
-       <Route exact path ="/">
-       <ListOfReq/>
+        <Route path= "/exectcityweather">
+          <SecondRequest id= {this.state.data} />
         </Route>
 
+        <Route  path ="/">
+          <ListOfReq passdata = { (newData: any) => {
+            this.setState({
+              data: newData
+            });
+          }} />
+        </Route>
 
-   </Switch>
-  )  
+      </Switch>
+    )  
+  }
  }
  export default AppRouter;
