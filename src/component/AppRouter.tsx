@@ -3,8 +3,9 @@ import { BrowserRouter as Switch, Route, Router } from "react-router-dom";
 import SecondRequest from "./SecondRequest";
 import ListOfReq from "../ListOfReq";
 import { ReactComponent } from "*.svg";
+import GetData from "./FirstRequest";
 
-class AppRouter extends Component<{},{data:number}> {
+class AppRouter extends Component<{},{data:Number} > {
 	constructor(props: any) {
 		super(props);
   }

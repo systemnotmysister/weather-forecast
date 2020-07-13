@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import GetData2 from "./SecondRequest";
 import { Link, Route, Router } from "react-router-dom";
 
-export const apiKey = "6f699dde7f55efea24cc34b40d167d91";
+export const apiKey = "8febdc6fa94887bdb64e6c5cbc5a47cb";
 
 class GetData extends Component<
 	{ id: number },
@@ -20,7 +20,7 @@ class GetData extends Component<
 		this.setState({ loading: true });
 		try {
 			const response = await fetch(
-				` https://api.openweathermap.org/data/2.5/weather?id=${this.props.id}&appid=${apiKey} `
+			`https://api.openweathermap.org/data/2.5/forecast?id=${this.props.id}&appid=${apiKey} `
 			);
 			const data = await response.json();
 			this.setState({ data: data });
@@ -39,19 +39,17 @@ class GetData extends Component<
 				<div>
 					<ul>
 						<Row>
-							<Col span={2}>
-								<li>
-									<Link to={this.props.id.toString()}>
-										{this.state.data.name}
-									</Link>
-								</li>
-							</Col>
-							<Col span={2}>
-								{" "}
-								temperature: {Math.round(this.state.data.main.temp - 273)}{" "}
-							</Col>
-							<Col span={2}> humidity: {this.state.data.main.humidity} </Col>
-							qw.
+
+						 <Col span={2}> 
+							   <li>
+								  <Link to={this.props.id.toString()}>{this.state.data.city.name}</Link>
+							  </li>	
+						 </Col>	
+							
+						  <Col span={2}>  temperature: {this.state.data.list.temp}  </Col>
+
+						  <Col span={2}> humidity:  </Col> 
+						  
 						</Row>
 					</ul>
 				</div>
