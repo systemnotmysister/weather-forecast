@@ -34,7 +34,9 @@ class GetData extends Component<
 	render() {
 		if (this.state.loading) {
 			return "loading...";
-		} else {
+		} 
+	
+		else {
 			return (
 				<div>
 					<ul>
@@ -46,9 +48,8 @@ class GetData extends Component<
 							  </li>	
 						 </Col>	
 							
-						  <Col span={2}>  temperature: {this.state.data.list.temp}  </Col>
+						   current temperature: {Math.round(this.state.data.list[0].main.temp - 273)}  
 
-						  <Col span={2}> humidity:  </Col> 
 						  
 						</Row>
 					</ul>

@@ -35,14 +35,20 @@ console.log(data);
 			if (dataResponse) {
 		
 			const bla =	dataResponse.list.map((element: any) => {
+				
 					return {
+						
+							
+						
 						dt_txt: element.dt_txt,
 						feels_like: Math.round(element.main.feels_like - 273)  ,
 						humidity: element.main.humidity,
 						pressure: element.main.pressure,
 						temp: Math.round(element.main.temp - 273),
 						temp_min: Math.round(element.main.temp_min - 273 ),
-						temp_max: Math.round(element.main.temp_max - 273)
+						temp_max: Math.round(element.main.temp_max - 273)	
+
+						
 					}
 
 				})
