@@ -32,19 +32,32 @@ export const columns = [
     },  
      
     {
+      title: 'temp_min',
+      dataIndex: 'temp_min',
+      key: 'temp_min',
+    },
+    {
         title: 'temp_max',
         dataIndex: 'temp_max',
         key: 'temp_max',
       },
-            {
-        title: 'temp_min',
-        dataIndex: 'temp_min',
-        key: 'temp_min',
+      {
+        title: 'wind_speed',
+        dataIndex: 'speed',
+        key: 'speed',
       },
-   
- 
-   
-     
+      {
+        title: 'description',
+        dataIndex: 'description',
+        key: 'description',
+      },
+
+      {
+        title: 'weatherIcon',
+        dataIndex: `http://openweathermap.org/img/wn/10d@2x.png10d@2x.png`,
+        key: 'weatherIcon',
+      }
+
 ]
 
  

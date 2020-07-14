@@ -9,6 +9,7 @@ import { useParams, Route } from "react-router-dom";
 import { stringify } from "querystring";
 import { listenerCount } from "process";
 import { columns as columns } from './Table';
+import imgReact from './imgReact';
 
 function GetData2() {
 
@@ -36,29 +37,29 @@ console.log(data);
 		
 			const bla =	dataResponse.list.map((element: any) => {
 				
-					return {
-						
+					return (
 							
-						
-						dt_txt: element.dt_txt,
+						{dt_txt: element.dt_txt,
 						feels_like: Math.round(element.main.feels_like - 273)  ,
 						humidity: element.main.humidity,
 						pressure: element.main.pressure,
 						temp: Math.round(element.main.temp - 273),
-						temp_min: Math.round(element.main.temp_min - 273 ),
-						temp_max: Math.round(element.main.temp_max - 273)	
-
-						
-					}
+						temp_min: Math.round(element.main.temp_min - 273 ) ,
+						temp_max: Math.round(element.main.temp_max - 273)	,
+						speed: element.wind.speed,
+						description:	element.weather[0].description,
+						weatherIconID: element.weather[0].id,
+						weatherIcon: element.weather[0].icon}
+                  
+					)
 
 				})
+				
 				console.log('got it ');
 				console.log(bla);
 				setData(bla)
 			
 			}
-
-
 		})
 	}, [])
 

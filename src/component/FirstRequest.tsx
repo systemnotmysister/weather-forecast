@@ -16,6 +16,7 @@ class GetData extends Component<
 			data: [],
 		};
 	}
+	
 	async componentDidMount() {
 		this.setState({ loading: true });
 		try {
@@ -30,7 +31,7 @@ class GetData extends Component<
 			console.error(e);
 		}
 	}
-
+	
 	render() {
 		if (this.state.loading) {
 			return "loading...";
@@ -42,21 +43,28 @@ class GetData extends Component<
 					<ul>
 						<Row>
 
-						 <Col span={2}> 
+						 <Col span={6}> 
 							   <li>
 								  <Link to={this.props.id.toString()}>{this.state.data.city.name}</Link>
 							  </li>	
 						 </Col>	
 							
-						   current temperature: {Math.round(this.state.data.list[0].main.temp - 273)}  
+						 <Col span={6}>  current temperature: {Math.round(this.state.data.list[0].main.temp - 273)}   </Col>	
 
-						  
+
+						 <Col span={6}> wind_speed: {this.state.data.list[0].wind.speed}</Col>	
+
+						 <Col span={6}> description: {this.state.data.list[0].weather[0].description}</Col>	
+						 
+
+						 {/* скорость ветра м/c влажность давление + иконка + ощущается как  */}
 						</Row>
 					</ul>
 				</div>
 			);
 		}
 	}
+	
 }
 
 export default GetData;
