@@ -222,6 +222,16 @@
         ],
         "zoom": 6
     },
+    {
+      "id": 696643,
+      "name": "Poltava",
+      "state": "",
+      "country": "UA",
+      "coord": {
+        "lon": 34.54073,
+        "lat": 49.593731
+      }
+   }
 ]        
 export default CityId;  
  
